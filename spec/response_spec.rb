@@ -76,7 +76,7 @@ describe RestClient::Response do
   end
 
   describe "redirection" do
-    
+
     it "follows a redirection when the request is a get" do
       stub_request(:get, 'http://some/resource').to_return(:body => '', :status => 301, :headers => {'Location' => 'http://new/resource'})
       stub_request(:get, 'http://new/resource').to_return(:body => 'Foo')
@@ -125,7 +125,7 @@ describe RestClient::Response do
       RestClient::Request.execute(:url => 'http://some/resource', :method => :get).body.should == 'Foo'
     end
 
-    
+
   end
 
 
